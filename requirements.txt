@@ -1,0 +1,5 @@
+# Tested with Python 3.13.14 on Windows 11.
+# tkinter ships with the python.org Windows installer; on Linux install python3-tk.
+numpy==2.4.5
+scipy==1.17.1
+Pillow==12.2.0

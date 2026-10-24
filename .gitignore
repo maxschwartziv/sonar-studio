@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+sections.json
+ghostvision_settings.json
+rockmapper_out/
+rockmapper_results/
+ghostvision_out/
+ghostvision_results/
+screenshot.png
+screenshot_vents.png

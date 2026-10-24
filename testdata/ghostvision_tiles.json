@@ -1,0 +1,50 @@
+[
+ {
+  "name": "vent_field_seed475861_port_0_0.jpg",
+  "scene": "vent_field_seed475861",
+  "side": "port",
+  "offset": 0,
+  "px_m": 50.0,
+  "render_h": 400
+ },
+ {
+  "name": "vent_field_seed475861_star_1_0.jpg",
+  "scene": "vent_field_seed475861",
+  "side": "star",
+  "offset": 0,
+  "px_m": 50.0,
+  "render_h": 400
+ },
+ {
+  "name": "vent_field_seed7_port_0_0.jpg",
+  "scene": "vent_field_seed7",
+  "side": "port",
+  "offset": 0,
+  "px_m": 100.0,
+  "render_h": 200
+ },
+ {
+  "name": "vent_field_seed7_port_1_100.jpg",
+  "scene": "vent_field_seed7",
+  "side": "port",
+  "offset": 100,
+  "px_m": 100.0,
+  "render_h": 200
+ },
+ {
+  "name": "vent_field_seed7_star_2_0.jpg",
+  "scene": "vent_field_seed7",
+  "side": "star",
+  "offset": 0,
+  "px_m": 100.0,
+  "render_h": 200
+ },
+ {
+  "name": "vent_field_seed7_star_3_100.jpg",
+  "scene": "vent_field_seed7",
+  "side": "star",
+  "offset": 100,
+  "px_m": 100.0,
+  "render_h": 200
+ }
+]

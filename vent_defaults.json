@@ -1,0 +1,11 @@
+{
+  "mounds_per_km2": 0.1,
+  "mound_min_m": 300.0,
+  "mound_max_m": 1500.0,
+  "mound_height_m": 80.0,
+  "fissure_m": 15.0,
+  "fissure_wavelength_m": 4000.0,
+  "fissure_width": 0.04,
+  "backscatter": 0.95,
+  "looks": 2.0
+}
