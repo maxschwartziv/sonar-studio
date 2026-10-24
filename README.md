@@ -84,12 +84,6 @@ The left panel holds Render and nine sections. Click a section header to open (â
 | Upgrade RockMapper, Upgrade GhostVision | Upgrades the tool's conda env after a confirmation dialog. The log and status bar show the installed version before and after. |
 | Open in console window | Off: tool output shows in a log window that keeps the last 5,000 lines, with Copy and Clear buttons. On: the tool runs in a visible cmd window. Default off. |
 
-Each slider has a box beside it. Type a number and press Enter, or leave the box, to set it. The box rejects text that is not a number. Values outside the slider's range clamp to the nearest end.
-
-Hovering over a control for 0.5 s shows a tooltip with its range and default.
-
-A change to any control starts a new render when the last render took under 1 s. Slower settings wait for Render. The bar at the bottom right shows render, export and GhostVision progress.
-
 ## RockMapper and GhostVision
 
 RockMapper and GhostVision are side-scan sonar tools from the PING Ecosystem (https://github.com/PINGEcosystem). Each runs in its own conda env as a separate program. Sonar Studio never imports their code: it writes files they read and reads files they write.
@@ -110,24 +104,6 @@ python -m pinginstaller ghostvision-gpu
 ```
 
 PINGInstaller creates the `rockmapper` and `ghostvision` envs. The RockMapper model ships inside the `rockmapper` package. GhostVision downloads three models to `%USERPROFILE%\.ghostvision\models\ghostvision-models` (`1` RF-DETR, `2` YOLO26, `5` YOLOv12) on its first launch with `python -m ghostvision`.
-
-### Upgrade the tools
-
-Upgrade RockMapper and Upgrade GhostVision run `Upgrade RockMapper.cmd` and `Upgrade GhostVision.cmd`. Each launcher also runs on its own from Explorer. It runs the install commands above in Miniforge's base env. From the PINGInstaller source (`pinginstaller/Install_Update.py`, read 24 October 2026):
-
-- PINGInstaller updates an existing env in place with `conda env update --prune`. `--prune` removes packages that the tool's env file does not list.
-- It also updates every package in the base env and cleans the conda package cache.
-- It downloads packages from the internet, often several GB. It downloads no models.
-
-Upgrade GhostVision has one extra step, on by default: a checkbox in the confirmation dialog, or the argument `withinference` to `Upgrade GhostVision.cmd`. It keeps `inference-gpu` at 1.x (tested with 1.8.2) after PINGInstaller runs. PINGInstaller's `--prune` can roll it back to 0.64.8. The step:
-
-1. Installs `pycuda` prebuilt from conda-forge with mamba. pip would compile it from source, which needs Microsoft C++ Build Tools.
-2. Runs `pip install --upgrade inference-gpu`.
-3. Reinstalls `inference-sdk`, `inference-gpu` and `inference-models` with `--force-reinstall --no-deps`. Removing 0.64 deletes files that `inference-sdk` also owns, and the import `inference_sdk.http.entities` then fails.
-
-GhostVision results on 1.8.2 matched 0.64.8 (24 October 2026).
-
-GhostVision can stop partway with a joblib `BrokenProcessPool` error during inference (seen on 24 October 2026). Run it again; the same command then succeeded.
 
 ### Scale
 
